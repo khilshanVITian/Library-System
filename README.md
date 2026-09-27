@@ -22,11 +22,11 @@ A simple menu-driven Python Library Management System that uses lists, dictionar
 - `design.md` - architecture and design diagrams
 
 ## How to Run
-1. Install Python 3.
-2. Keep all project files in the same folder.
-3. Run:
-   `python main.py`
-
+1. Install python 3 or install vs code or use google colab
+2. Open the main.py file from the repository
+3. Copy the existing code in any of the above mentioned interpreters
+4. Run the code and enjoy the relief of managing books manually
+   
 ## Non-Functional Requirements
 1. Usability: menu-driven and simple text interface.
 2. Reliability: invalid input is handled and data is saved after changes.
