@@ -9,13 +9,7 @@
 
 ## System Architecture
 
-User
-  |
-  v
-main.py
-  |
-  v
-runs program
+User-->main.py-->programme runs
 ## Workflow Diagram
 
 Start
