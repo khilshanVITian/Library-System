@@ -12,32 +12,11 @@
 User-->main.py-->programme runs
 ## Workflow Diagram
 
-Start
-  |
-  v
-Display Menu
-  |
-  v
-Select Operation
-  |
-  +--> Display books
-  |
-  +--> Add books
-  |
-  +--> Search books
-  |
-  +--> Remove books
-  |
-  +-->Exit
-  v
-Validate Input
-  |
-  v
-Update Data
-  |
-  v
-Return to Menu
-
+Start-->displays menu-->select operation-->+display books
+                                           +add books
+                                           +search books
+                                           +remove books
+                                           +exit
 ## Use Case Diagram
 
              +-----------------------------+
