@@ -1,61 +1,91 @@
-from book_manager import add_book, display_books, search_book, remove_book, update_book
-from member_manager import add_member, display_members, remove_member
-from transaction_manager import issue_book, return_book, display_transactions
-from reports import library_report
-from storage import load_data
+books = [
+    {"id":1,"name":"Programming for Engineers","author":"A.R. Bradley"},
+    {"id":2,"name":"Introduction to the Design and Analysis of Algorithms","author":"Levitin"},
+    {"id":3,"name":"Let Us Python","author":"Yashavant Kanetkar"},
+    {"id":4,"name":"Higher Engineering Mathematics","author":"B. S. Grewal"},
+    {"id":5,"name":"Advanced Engineering Mathematics","author":"Peter V. O’ Neil"},
+    {"id":6,"name":"AI Revolution","author":"Andrew Tate"},
+    {"id":7,"name":"Machine Learning","author":"Tom & Jerry"},
+    {"id":8,"name":"Application Development","author":"Michael Jackson"},
+    {"id":9,"name":"Cyber Security In Your Life","author":"Daniel Jr"},
+    {"id":10,"name":"Wasting Time","author":"Khilshan W."}]
 
+def display_books():
+    print("\n--- Books available currently ---")
+    if len(books) == 0:
+        print("There are no books now.")
+    else:
+        for book in books:
+            print("ID:", book["id"], "| Title:", book["name"], "| Author:", book["author"])
+    print()
+def add_book():
+    print("\n--- Add a Book ---")
+    book_id = int(input("Enter Book ID: "))
 
-def main():
-    data = load_data()
+    for book in books:
+        if book["id"] == book_id:
+            print("Error: A book with this ID already exists!\n")
+            return
 
-    while True:
-        print("\n===== LIBRARY MANAGEMENT SYSTEM =====")
-        print("1. Display Books")
-        print("2. Add Book")
-        print("3. Search Book")
-        print("4. Update Book")
-        print("5. Remove Book")
-        print("6. Add Member")
-        print("7. Display Members")
-        print("8. Remove Member")
-        print("9. Issue Book")
-        print("10. Return Book")
-        print("11. View Transactions")
-        print("12. Library Report")
-        print("13. Exit")
+    name = input("Please enter the book name: ")
+    author = input("Please enter the author name: ")
 
-        choice = input("Enter your choice: ").strip()
+    new_book = {
+        "id": book_id,
+        "name": name,
+        "author": author}
+    books.append(new_book)
+    print("Book added successfully!\n")
 
-        if choice == "1":
-            display_books(data)
-        elif choice == "2":
-            add_book(data)
-        elif choice == "3":
-            search_book(data)
-        elif choice == "4":
-            update_book(data)
-        elif choice == "5":
-            remove_book(data)
-        elif choice == "6":
-            add_member(data)
-        elif choice == "7":
-            display_members(data)
-        elif choice == "8":
-            remove_member(data)
-        elif choice == "9":
-            issue_book(data)
-        elif choice == "10":
-            return_book(data)
-        elif choice == "11":
-            display_transactions(data)
-        elif choice == "12":
-            library_report(data)
-        elif choice == "13":
-            print("Thank you for using the Library Management System!")
+def search_book():
+    print("\n--- Search Book ---")
+    search_name = input("Enter book name: ")
+    found = False
+
+    for book in books:
+        if book["name"].lower() == search_name.lower():
+            print("Match found:")
+            print("ID:", book["id"])
+            print("Name:", book["name"])
+            print("Author:", book["author"])
+            found = True
+    if not found:
+        print("No book found with that title.")
+    print()
+
+def remove_book():
+    print("\n--- Remove Book ---")
+    book_id = int(input("Enter Book ID to remove: "))
+    found = False
+    for book in books:
+        if book["id"] == book_id:
+            books.remove(book)
+            print("Book removed successfully!\n")
+            found = True
             break
-        else:
-            print("Invalid choice. Please enter a number from 1 to 13.")
+    if not found:
+        print("Book ID not found.\n")
 
+while True:
+    print("===== LIBRARY MANAGEMENT SYSTEM =====")
+    print("1. Display Books")
+    print("2. Add Book")
+    print("3. Search Book")
+    print("4. Remove Book")
+    print("5. Exit")
 
-if __name__ == "__main__":
-    main()
+    choice = input("Enter your choice (1-5): ")
+
+    if choice == "1":
+        display_books()
+    elif choice == "2":
+        add_book()
+    elif choice == "3":
+        search_book()
+    elif choice == "4":
+        remove_book()
+    elif choice == "5":
+        print("Thanks for your patience and precious time!")
+        break
+    else:
+        print("Invalid choice! Please choose an option between 1 and 5.\n")
