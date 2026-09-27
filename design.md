@@ -17,6 +17,7 @@ Start-->displays menu-->select operation-->+display books
                                            +search books
                                            +remove books
                                            +exit
+                                           -->validate input-->update data-->return to menu
 ## Use Case Diagram
 
              +-----------------------------+
