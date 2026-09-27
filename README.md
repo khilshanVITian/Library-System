@@ -6,8 +6,7 @@ A simple menu-driven Python Library Management System that uses lists, dictionar
 ## Features
 - Add, display, search, update, and remove books
 - Add, display, and remove library members
-- Issue and return books
-- Input validation and error handling
+- Input checking and error handling
 
 ## Technologies
 - Python 3
