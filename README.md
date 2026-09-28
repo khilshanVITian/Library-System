@@ -35,3 +35,8 @@ A simple menu-driven Python Library Management System that uses lists, dictionar
 
 ## Version Control
 The project should be uploaded to a GitHub repository with regular commits showing development progress.
+
+##Output Screenshot
+
+<img width="506" height="515" alt="image" src="https://github.com/user-attachments/assets/57cf865d-bc3c-4af4-af06-775101bf6add" />
+
